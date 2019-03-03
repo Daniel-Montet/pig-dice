@@ -1,25 +1,41 @@
 
-$(document).ready(function(event){
-  $('#avatar1btn').click(function(){
-    var name1=$('#avatar1').val();
+$(document).ready(function(){
+  var name1=''
+  var name2=''
+  var hold1=''
+  var hold2=''
+  $('#avatar1btn').click(function(event){
+    name1=$('#avatar1name').val();
     getname1(name1);
   })
   $("#hold1").click(function(){
-    console.log(hold=true)
-    return hold=true
+    return hold1=true
   })
   $('#avatar2btn').click(function(){
-    var name2=$('#avatar2').val();
+    name2=$('#avatar2name').val();
     getname2(name2)
   })
   $("#hold2").click(function(){
-    console.log(hold=true)
-    return hold=true
+
+    return hold2=true
   })
+  $("#avatar1roll").click(function(){
+
+    console.log(name1+" " + hold1)
+    //rollPlayer(name1)
+
+  })
+  $("#avatar2roll").click(function(){
+
+    console.log(name2+" " + hold2)
+    //rollPlayer(name1)
+
+  })
+
 })
 
 function getname1(name1){//CAPTURE PLAYER ONE NAME
-    var player1= new Avatar1(name1)
+    player1= new Avatar1(name1)
     $('#player1name').text("This is your corner " + player1.avatar1)
     return player1
 }
@@ -29,6 +45,8 @@ function getname2(name2){///CAPTURE PLAYER 2 NAME
     $('#player2name').text("This is your corner " + player2.avatar2)
     return player2
 }
+
+
 
 class Player{
     constructor(name){
@@ -83,7 +101,7 @@ var scoreboard= 0
 var currentscore=0
 var turnscore=0
 
-function rollPlayer(name,hold){//CALCULATE ROLL FUNCTIONALITY FOR AVATARS
+function rollPlayer(name){//CALCULATE ROLL FUNCTIONALITY FOR AVATARS
     this.name=name
     this.currentscore=currentscore
     this.turnscore=turnscore
