@@ -1,15 +1,13 @@
-$(document).ready(function(){
+
+$(document).ready(function(event){
   $('#avatar1btn').click(function(){
     var name1=$('#avatar1').val();
-    console.log(name1)
-
+    getname1(name1);
   })
   $('#avatar2btn').click(function(){
     var name2=$('#avatar2').val();
-    console.log(name2)
-
+    getname2(name2)
   })
-//  event.preventDefault();
 })
 
 class Player{
@@ -23,28 +21,54 @@ class Player{
 
 }
 
-class Avatar extends Player{//DESCRIBE PROPERTIES OF DIFFERENT AVATARS
+class Avatar1 extends Player{//DESCRIBE PROPERTIES OF AVATAR 1
 
-    constructor(avatar1,avatar2){
+    constructor(avatar1){
         super(name)
         this.avatar1=avatar1
-        this.avatar2=avatar2
+  //      this.avatar2=avatar2
     }
     avatar1(){
         return this.avatar1
     }
+  //  avatar2(){
+  //      return this.avatar2
+    //}
+
+}
+class Avatar2 extends Player{//DESCRIBE PROPERTIES OF AVATAR 2
+
+    constructor(avatar2){
+        super(name)
+    //    this.avatar1=avatar1
+       this.avatar2=avatar2
+   }
+  //  avatar1(){
+  //      return this.avatar1
+    //}
     avatar2(){
         return this.avatar2
     }
 
 }
 
+function getname1(name1){
+    var player1= new Avatar1(name1)
+    console.log(player1.avatar1)
+    return player1
+}
 
+function getname2(name2){
+    var player2= new Avatar1(name2)
+    console.log(player2.avatar1)
+    return player2
+}
 
-
-var av=new Avatar("brian","kennedy")
-var player1=(av.avatar1)
-var player2=(av.avatar2)
+///console.log(avatar1.avatar1())
+//console.log(avatar2.avatar2())
+//var av=new Avatar("brian","kennedy")
+//var player1=(av.avatar1)
+//var player2=(av.avatar2)
 var maxscore=100
 var scoreboard= 0
 var currentscore=0
