@@ -8,28 +8,31 @@ $(document).ready(function(){
     name1=$('#avatar1name').val();
     getname1(name1);
   })
-  $("#hold1").click(function(){
-    return hold1=true
-  })
+
   $('#avatar2btn').click(function(){
     name2=$('#avatar2name').val();
     getname2(name2)
   })
-  $("#hold2").click(function(){
 
-    return hold2=true
+  $("#hold1").click(function(){
+    hold1=true
   })
-  $("#avatar1roll").click(function(){
 
+  $("#avatar1roll").click(function(){
     console.log(name1+" " + hold1)
-    //rollPlayer(name1)
+
+    rollPlayer1(name1,hold1,name2,hold2)
 
   })
   $("#avatar2roll").click(function(){
-
     console.log(name2+" " + hold2)
-    //rollPlayer(name1)
+    rollPlayer2(name1,hold1,name2,hold2)
 
+
+  })
+  $("#hold2").click(function(){
+
+    hold2=true
   })
 
 })
@@ -97,31 +100,76 @@ class Avatar2 extends Player{//DESCRIBE PROPERTIES OF AVATAR 2
 //var player1=(av.avatar1)
 //var player2=(av.avatar2)
 var maxscore=100
-var scoreboard= 0
-var currentscore=0
-var turnscore=0
+var scoreboard1= 0
+var currentscore1=0
+var turnscore1=0
+var scoreboard2= 0
+var currentscore2=0
+var turnscore2=0
 
-function rollPlayer(name){//CALCULATE ROLL FUNCTIONALITY FOR AVATARS
-    this.name=name
-    this.currentscore=currentscore
-    this.turnscore=turnscore
-    this.currentscore=currentscore
+function rollPlayer1(name1,hold1,name2,hold2){//CALCULATE ROLL FUNCTIONALITY FOR AVATARS
+    this.name=name1
+    this.hold=hold1
+    this.currentscore=0
+    this.turnscore=turnscore1
+    this.scoreboard=scoreboard1
 
-    this.turnscore=Math.floor(Math.random()*6)+1;
-    if(this.turnscore!=1){
-        this.currentscore+=this.turnscore
-        if(this.currentscore===maxscore){
-            this.scoreboard+=this.currentscore
-            console.log("you win")
-            return
-        }
-        else if(this.currentscore<maxscore && this.hold==true){
-            this.scoreboard+=this.currentscore
+    turnscore1=Math.floor(Math.random()*6)+1;
+    console.log("Player1 turnscore = " +turnscore1)
+    if(turnscore1!=1){
+        currentscore1+=turnscore1
+        console.log("Player1 current round score "+currentscore1)
+             
+    }
+    if(turnscore1==1){
+        currentscore1-=turnscore1
+        console.log("Player1 hit a 1 and current round score is "+currentscore1)
+             
+    }
+    if(currentscore1<maxscore && this.hold==true){
+        scoreboard1+=currentscore1
+        currentscore1-=currentscore1
+       // rollPlayer2(name2,hold2)
+        console.log("its players 2 turn and the currentscore is "+currentscore1)
 
-        }
+
+    } 
+    if(scoreboard1===maxscore){////display win
+        console.log("you win")
+        return
+    }
+    
+    console.log("player1 scoreboard score " + this.scoreboard1)
+}
+
+
+function rollPlayer2(name1,hold1,name2,hold2){//CALCULATE ROLL FUNCTIONALITY FOR AVATARS
+    this.name=name2
+    this.hold=hold2
+    this.currentscore=currentscore2
+    this.turnscore=turnscore2
+
+    turnscore2=Math.floor(Math.random()*6)+1;
+    if(turnscore2!=1){
+        currentscore2+=turnscore2
+             
+    }
+    if(currentscore2<maxscore && this.hold==true){
+        scoreboard2+=currentscore2
+        currentscore2-=currentscore2
+     //   rollPlayer1(name1,hold1)
+        console.log("its players 1 turn")
+
+
+    } 
+    if(scoreboard2===maxscore){////display win
+        console.log("you win")
+        return
     }
     else{
-        this.currentscore-=this.currentscore
+        currentscore2-=currentscore2
+      //  rollPlayer1(name1,hold1)
+        console.log("its players 1 turn")
     }
-    console.log(this.currentscore)
+    console.log("player1 current score " + this.scoreboard1)
 }
