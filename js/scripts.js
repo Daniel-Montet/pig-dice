@@ -10,6 +10,18 @@ $(document).ready(function(event){
   })
 })
 
+function getname1(name1){//CAPTURE PLAYER ONE NAME
+    var player1= new Avatar1(name1)
+    $('#player1name').text("This is your corner " + player1.avatar1)
+    return player1
+}
+
+function getname2(name2){///CAPTURE PLAYER 2 NAME
+    var player2= new Avatar2(name2)
+    $('#player2name').text("This is your corner " + player2.avatar2)
+    return player2
+}
+
 class Player{
     constructor(name){
         this.name=name
@@ -52,17 +64,6 @@ class Avatar2 extends Player{//DESCRIBE PROPERTIES OF AVATAR 2
 
 }
 
-function getname1(name1){
-    var player1= new Avatar1(name1)
-    console.log(player1.avatar1)
-    return player1
-}
-
-function getname2(name2){
-    var player2= new Avatar1(name2)
-    console.log(player2.avatar1)
-    return player2
-}
 
 ///console.log(avatar1.avatar1())
 //console.log(avatar2.avatar2())
