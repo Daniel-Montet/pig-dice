@@ -1,4 +1,16 @@
+$(document).ready(function(){
+  $('#avatar1btn').click(function(){
+    var name1=$('#avatar1').val();
+    console.log(name1)
 
+  })
+  $('#avatar2btn').click(function(){
+    var name2=$('#avatar2').val();
+    console.log(name2)
+
+  })
+//  event.preventDefault();
+})
 
 class Player{
     constructor(name){
