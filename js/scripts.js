@@ -4,9 +4,17 @@ $(document).ready(function(event){
     var name1=$('#avatar1').val();
     getname1(name1);
   })
+  $("#hold1").click(function(){
+    console.log(hold=true)
+    return hold=true
+  })
   $('#avatar2btn').click(function(){
     var name2=$('#avatar2').val();
     getname2(name2)
+  })
+  $("#hold2").click(function(){
+    console.log(hold=true)
+    return hold=true
   })
 })
 
@@ -75,22 +83,27 @@ var scoreboard= 0
 var currentscore=0
 var turnscore=0
 
-function rollPlayer(){//CALCULATE ROLL FUNCTIONALITY FOR AVATARS
-    turnscore=Math.floor(Math.random()*6)+1;
-    if(turnscore!=1){
-        currentscore+=turnscore
-        if(currentscore===maxscore){
-            scoreboard+=currentscore
+function rollPlayer(name,hold){//CALCULATE ROLL FUNCTIONALITY FOR AVATARS
+    this.name=name
+    this.currentscore=currentscore
+    this.turnscore=turnscore
+    this.currentscore=currentscore
+
+    this.turnscore=Math.floor(Math.random()*6)+1;
+    if(this.turnscore!=1){
+        this.currentscore+=this.turnscore
+        if(this.currentscore===maxscore){
+            this.scoreboard+=this.currentscore
             console.log("you win")
             return
         }
-       // else if(currentscore<maxscore && hold==true){
-        //    scoreboard+=currentscore
-            //RUN FUNCTION
-       // }
+        else if(this.currentscore<maxscore && this.hold==true){
+            this.scoreboard+=this.currentscore
+
+        }
     }
     else{
-        currentscore-=currentscore
+        this.currentscore-=this.currentscore
     }
-    console.log(currentscore)
+    console.log(this.currentscore)
 }
