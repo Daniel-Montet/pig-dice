@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
   var name1=''
   var name2=''
@@ -16,6 +15,7 @@ $(document).ready(function(){
 
   $("#hold1").click(function(){
     hold1=true
+    console.log("Its players two turn")
   })
 
   $("#avatar1roll").click(function(){
@@ -31,7 +31,7 @@ $(document).ready(function(){
 
   })
   $("#hold2").click(function(){
-
+    console.log("Its players one turn")
     hold2=true
   })
 
@@ -109,67 +109,72 @@ var turnscore2=0
 
 function rollPlayer1(name1,hold1,name2,hold2){//CALCULATE ROLL FUNCTIONALITY FOR AVATARS
     this.name=name1
-    this.hold=hold1
+    this.hold=false
     this.currentscore=0
     this.turnscore=turnscore1
     this.scoreboard=scoreboard1
 
     turnscore1=Math.floor(Math.random()*6)+1;
     console.log("Player1 turnscore = " +turnscore1)
+    if(currentscore1<maxscore && hold1===true){
+        scoreboard1+=currentscore1
+        currentscore1-=currentscore1
+        console.log("its players 2 turn and the currentscore is "+currentscore1)
+       // return hold1=false
+       // rollPlayer2(name2,hold2)
+       console.log("player1 scoreboard score " + this.scoreboard1)
+        
+
+
+    }
     if(turnscore1!=1){
         currentscore1+=turnscore1
         console.log("Player1 current round score "+currentscore1)
              
     }
     if(turnscore1==1){
-        currentscore1-=turnscore1
+        currentscore1-=currentscore1
         console.log("Player1 hit a 1 and current round score is "+currentscore1)
              
-    }
-    if(currentscore1<maxscore && this.hold==true){
-        scoreboard1+=currentscore1
-        currentscore1-=currentscore1
-       // rollPlayer2(name2,hold2)
-        console.log("its players 2 turn and the currentscore is "+currentscore1)
-
-
     } 
     if(scoreboard1===maxscore){////display win
         console.log("you win")
         return
     }
     
-    console.log("player1 scoreboard score " + this.scoreboard1)
+    
 }
 
 
 function rollPlayer2(name1,hold1,name2,hold2){//CALCULATE ROLL FUNCTIONALITY FOR AVATARS
     this.name=name2
-    this.hold=hold2
+    this.hold=false
     this.currentscore=currentscore2
     this.turnscore=turnscore2
 
     turnscore2=Math.floor(Math.random()*6)+1;
-    if(turnscore2!=1){
-        currentscore2+=turnscore2
-             
-    }
-    if(currentscore2<maxscore && this.hold==true){
+    console.log("Player2 turnscore = " +turnscore2)
+    if(currentscore2<maxscore && hold2===true){
         scoreboard2+=currentscore2
         currentscore2-=currentscore2
-     //   rollPlayer1(name1,hold1)
-        console.log("its players 1 turn")
+        console.log("its players 1 turn and the currentscore is "+currentscore2)
+       console.log("player2 scoreboard score " + this.scoreboard2)
+        
 
 
+    }
+    if(turnscore2!=1){
+        currentscore2+=turnscore2
+        console.log("Player2 current round score "+currentscore2)
+             
+    }
+    if(turnscore2==1){
+        currentscore2-=currentscore2
+        console.log("Player2 hit a 1 and current round score is "+currentscore2)
+             
     } 
     if(scoreboard2===maxscore){////display win
         console.log("you win")
         return
     }
-    else{
-        currentscore2-=currentscore2
-      //  rollPlayer1(name1,hold1)
-        console.log("its players 1 turn")
-    }
-    console.log("player1 current score " + this.scoreboard1)
 }
