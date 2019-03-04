@@ -11,110 +11,157 @@
 </head>
 
 <body>
-  <div class="container-fluid" id="page1">
+  <div class="container" id="page1">
     <div class="row">
       <div class="col-md-10">
-        <h1>Welcome to the game of Pig</h1>
-        <p>Pig is a simple dice game which in its basic form is playable with just a single die. You win by being the first player to score 100 or more points.</p>
-        <p>To play you'll need 2 to 10 players, one 6-sided dice, and a pencil and some paper for keeping score.</p>
-        <h2>So how do you play Pig?</h2>
-        <p>Choose a player to go first. That player throws a die and scores as many points as the total shown on the die providing the die doesn’t roll a 1. The player may continue rolling and accumulating points (but risk rolling a 1) or end his turn.</p>
-        <p>If the player rolls a 1 his turn is over, he loses all points he accumulated that turn, and he passes the die to the next player.</p>
-        <p>Play passes from player to player until a winner is determined.</p>
-        <h3>How do you win?</h3>
-        <p>The first player to accumulate 100 or more points wins the game</p>
+        <div class="card border-secondary">
+          <h1>Welcome to the game of Pig</h1>
+          <p>Pig is a simple dice game which in its basic form is playable with just a single die. You win by being the first player to score 100 or more points.</p>
+          <p>To play you'll need 2 to 10 players, one 6-sided dice, and a pencil and some paper for keeping score.</p>
+          <h2>So how do you play Pig?</h2>
+          <p>Choose a player to go first. That player throws a die and scores as many points as the total shown on the die providing the die doesn’t roll a 1. The player may continue rolling and accumulating points (but risk rolling a 1) or end his turn.</p>
+          <p>If the player rolls a 1 his turn is over, he loses all points he accumulated that turn, and he passes the die to the next player.</p>
+          <p>Play passes from player to player until a winner is determined.</p>
+          <h3>How do you win?</h3>
+          <p>The first player to accumulate 100 or more points wins the game</p>
+        </div>
 
       </div>
       <div class="col-md-2">
-        <div class="card" style="width:200px">
-          <div class="card-body">
-            <div class="form-group">
-              <label for="avatar1"></label>
-              <input type="text" class="form-control" id="avatar1name">
-            </div>
-            <input type="button" class="btn btn-primary" id="avatar1btn" value="Submit">
 
-          </div>
-
-        </div>
-        <div class="card" style="width:200px">
-          <div class="card-body">
+        <div class="card border-secondary" style="width:200px">
+          <p>Play game</p>
+          <div class="card-body border-secondary">
             <div class="form-group">
               <label for="avatar2"></label>
-              <input type="text" class="form-control" id="avatar2name">
+              <input type="text" class="form-control border-secondary" id="avatar2name" placeholder="player-2..">
             </div>
-            <input type="button" class="btn btn-primary" value="Submit" id="avatar2btn">
+            <div >
+              <input type="button" class="btn btn-outline-secondary btn-sm" value="submit" id="avatar2btn">
+
+            </div>
+            <div class="form-group">
+              <label for="avatar1"></label>
+              <input type="text" class="form-control border-secondary" id="avatar1name" placeholder="player-1..">
+            </div>
+            <div >
+              <input type="button" class="btn btn-outline-secondary btn-sm" id="avatar1btn" value="submit">
+
+            </div>
 
           </div>
+          <div class="card-footer">
+            <a href="#page2" class="btn btn-outline-secondary btn-sm" id="next">proceed</a>
+          </div>
+
+
         </div>
 
       </div>
-      <div>
-        <a href="#page2" class="btn btn-primary" id="next">proceed</a>
-      </div>
-
 
     </div>
 
   </div>
-  <div class="container" id="page2">
+  <div class="container-fluid" id="page2">
     <div class="row">
       <div class="col-md-2">
-        <div class="card">
+        <div class="card border-secondary">
           <img class="card-img-top" src="https://cdn2.iconfinder.com/data/icons/flatfaces-everyday-people-square/128/boy_young_male_face_avatar-512.png" alt="Card image">
 
           <div class="card-header" id="player1name"></div>
-          <div class="card-body">
-
-          </div>
-          <div class="card-footer">
+          <div class="card-body border-secondary">
             <div class="form-group">
               <label for="avatar1"></label>
-              <input type="button" class="btn btn-primary" id="avatar1roll" value="roll">
-              <input type="button" class="btn btn-primary" id="hold1" value="hold">
+              <input type="button" class="btn btn-outline-secondary btn-sm" id="avatar1roll" value="roll">
+
             </div>
+          </div>
+          <div class="card-footer">
+            <input type="button" class="btn btn-outline-secondary btn-sm" id="hold1" value="hold">
           </div>
         </div>
 
       </div>
       <div class="col-md-8" id="display">
-        <p id="turn"></p>
-        <div class="card" id="player1rollscore">
+
+          <div class="card-body border-secondary" id="turn">
+
+          </div>
+
+
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card border-secondary">
+                <h6>roll-score</h6>
+                <div class="card-body border-secondary"  id="player1rollscore">
+
+                </div>
+
+
+              </div>
+              <div class="card border-secondary">
+                <h6>round-score</h6>
+                <div class="card-body border-secondary"  id="player1currentscore">
+
+                </div>
+
+
+              </div>
+              <div class="card border-secondary">
+                <h6>total-score</h6>
+                <div class="card-body border-secondary"  id="player1scoreborad">
+
+                </div>
+
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card border-secondary">
+                <h6>roll-score</h6>
+                <div class="card-body border-secondary"  id="player2rollscore">
+
+                </div>
+
+              </div>
+              <div class="card border-secondary">
+                <h6>round-score</h6>
+                <div class="card-body border-secondary"  id="player2currentscore">
+
+                </div>
+
+              </div>
+              <div class="card border-secondary">
+                <h6>total-score</h6>
+                <div class="card-body border-secondary"  id="player2scoreborad">
+
+                </div>
+
+              </div>
+            </div>
+
+          </div>
 
         </div>
-        <div class="card" id="player1currentscore">
 
-        </div>
-        <div class="card" id="player1scoreborad">
 
-        </div>
-        <div class="card" id="player2rollscore">
-
-        </div>
-        <div class="card" id="player2currentscore">
-          
-        </div>
-        <div class="card" id="player2scoreborad">
-
-        </div>
 
       </div>
 
       <div class="col-md-2">
-        <div class="card">
+        <div class="card border-secondary">
           <img class="card-img-top" src="https://cdn2.iconfinder.com/data/icons/flatfaces-everyday-people-square/128/boy_young_male_face_avatar-512.png" alt="Card image">
 
           <div class="card-header" id="player2name"></div>
-          <div class="card-body">
-
-
-          </div>
-          <div class="card-footer">
+          <div class="card-body border-secondary">
             <div class="form-group">
               <label for="avatar1"></label>
-              <input type="button" class="btn btn-primary" id="avatar2roll" value="roll">
-              <input type="button" class="btn btn-primary" id="hold2" value="hold">
+              <input type="button" class="btn btn-outline-secondary btn-sm" id="avatar2roll" value="roll">
+
             </div>
+          </div>
+          <div class="card-footer">
+            <input type="button" class="btn btn-outline-secondary btn-sm" id="hold2" value="hold">
           </div>
 
         </div>
