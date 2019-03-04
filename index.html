@@ -4,13 +4,14 @@
 <head>
   <meta charset="utf-8">
   <title>Pig-Dice</title>
-  <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/styles.css">
+
 
 </head>
 
 <body>
-  <div class="container" id="page1">
+  <div class="container-fluid" id="page1">
     <div class="row">
       <div class="col-md-10">
         <h1>Welcome to the game of Pig</h1>
@@ -26,7 +27,6 @@
       </div>
       <div class="col-md-2">
         <div class="card" style="width:200px">
-          <img class="card-img-top" src="https://cdn2.iconfinder.com/data/icons/flatfaces-everyday-people-square/128/boy_young_male_face_avatar-512.png" alt="Card image">
           <div class="card-body">
             <div class="form-group">
               <label for="avatar1"></label>
@@ -38,7 +38,6 @@
 
         </div>
         <div class="card" style="width:200px">
-          <img class="card-img-top" src="https://cdn2.iconfinder.com/data/icons/flatfaces-everyday-people-square/128/boy_young_male_face_avatar-512.png" alt="Card image">
           <div class="card-body">
             <div class="form-group">
               <label for="avatar2"></label>
@@ -51,7 +50,7 @@
 
       </div>
       <div>
-        <a href="#page2" class="btn">proceed</a>
+        <a href="#page2" class="btn btn-primary" id="next">proceed</a>
       </div>
 
 
@@ -62,6 +61,8 @@
     <div class="row">
       <div class="col-md-2">
         <div class="card">
+          <img class="card-img-top" src="https://cdn2.iconfinder.com/data/icons/flatfaces-everyday-people-square/128/boy_young_male_face_avatar-512.png" alt="Card image">
+
           <div class="card-header" id="player1name"></div>
           <div class="card-body">
 
@@ -76,13 +77,33 @@
         </div>
 
       </div>
-      <div class="col-md-8">
+      <div class="col-md-8" id="display">
+        <p id="turn"></p>
+        <div class="card" id="player1rollscore">
 
+        </div>
+        <div class="card" id="player1currentscore">
+
+        </div>
+        <div class="card" id="player1scoreborad">
+
+        </div>
+        <div class="card" id="player2rollscore">
+
+        </div>
+        <div class="card" id="player2currentscore">
+          
+        </div>
+        <div class="card" id="player2scoreborad">
+
+        </div>
 
       </div>
 
       <div class="col-md-2">
         <div class="card">
+          <img class="card-img-top" src="https://cdn2.iconfinder.com/data/icons/flatfaces-everyday-people-square/128/boy_young_male_face_avatar-512.png" alt="Card image">
+
           <div class="card-header" id="player2name"></div>
           <div class="card-body">
 
