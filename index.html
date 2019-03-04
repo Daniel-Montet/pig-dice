@@ -10,7 +10,55 @@
 </head>
 
 <body>
-  <div class="container-fluid">
+  <div class="container" id="page1">
+    <div class="row">
+      <div class="col-md-10">
+        <h1>Welcome to the game of Pig</h1>
+        <p>Pig is a simple dice game which in its basic form is playable with just a single die. You win by being the first player to score 100 or more points.</p>
+        <p>To play you'll need 2 to 10 players, one 6-sided dice, and a pencil and some paper for keeping score.</p>
+        <h2>So how do you play Pig?</h2>
+        <p>Choose a player to go first. That player throws a die and scores as many points as the total shown on the die providing the die doesn’t roll a 1. The player may continue rolling and accumulating points (but risk rolling a 1) or end his turn.</p>
+        <p>If the player rolls a 1 his turn is over, he loses all points he accumulated that turn, and he passes the die to the next player.</p>
+        <p>Play passes from player to player until a winner is determined.</p>
+        <h3>How do you win?</h3>
+        <p>The first player to accumulate 100 or more points wins the game</p>
+
+      </div>
+      <div class="col-md-2">
+        <div class="card" style="width:200px">
+          <img class="card-img-top" src="https://cdn2.iconfinder.com/data/icons/flatfaces-everyday-people-square/128/boy_young_male_face_avatar-512.png" alt="Card image">
+          <div class="card-body">
+            <div class="form-group">
+              <label for="avatar1"></label>
+              <input type="text" class="form-control" id="avatar1name">
+            </div>
+            <input type="button" class="btn btn-primary" id="avatar1btn" value="Submit">
+
+          </div>
+
+        </div>
+        <div class="card" style="width:200px">
+          <img class="card-img-top" src="https://cdn2.iconfinder.com/data/icons/flatfaces-everyday-people-square/128/boy_young_male_face_avatar-512.png" alt="Card image">
+          <div class="card-body">
+            <div class="form-group">
+              <label for="avatar2"></label>
+              <input type="text" class="form-control" id="avatar2name">
+            </div>
+            <input type="button" class="btn btn-primary" value="Submit" id="avatar2btn">
+
+          </div>
+        </div>
+
+      </div>
+      <div>
+        <a href="#page2" class="btn">proceed</a>
+      </div>
+
+
+    </div>
+
+  </div>
+  <div class="container" id="page2">
     <div class="row">
       <div class="col-md-2">
         <div class="card">
@@ -21,7 +69,8 @@
           <div class="card-footer">
             <div class="form-group">
               <label for="avatar1"></label>
-              <input type="button" class="btn btn-primary" id="avatar1" value="roll">
+              <input type="button" class="btn btn-primary" id="avatar1roll" value="roll">
+              <input type="button" class="btn btn-primary" id="hold1" value="hold">
             </div>
           </div>
         </div>
@@ -34,7 +83,7 @@
 
       <div class="col-md-2">
         <div class="card">
-          <div class="card-header">Player 2</div>
+          <div class="card-header" id="player2name"></div>
           <div class="card-body">
 
 
@@ -42,7 +91,8 @@
           <div class="card-footer">
             <div class="form-group">
               <label for="avatar1"></label>
-              <input type="button" class="btn btn-primary" id="avatar1" value="roll">
+              <input type="button" class="btn btn-primary" id="avatar2roll" value="roll">
+              <input type="button" class="btn btn-primary" id="hold2" value="hold">
             </div>
           </div>
 
@@ -51,50 +101,7 @@
       </div>
     </div>
   </div>
-  <div class="container">
-    <h1>pig-dice</h1>
-    <div class="row">
-      <div class="col-md-6">
 
-        <div class="card" style="width:400px">
-          <img class="card-img-top" src="" alt="Card image">
-          <div class="card-body">
-            <h4 class="card-title">Player1</h4>
-            <p class="card-text">Player1 fill in your details</p>
-            <div class="form-group">
-              <label for="avatar1"></label>
-              <input type="text" class="form-control" id="avatar1">
-            </div>
-            <input type="button" class="btn btn-primary" id="avatar1btn" value="Submit">
-
-          </div>
-        </div>
-
-      </div>
-      <div class="col-md-6">
-        <div class="card" style="width:400px">
-          <img class="card-img-top" src="" alt="Card image">
-          <div class="card-body">
-            <h4 class="card-title">Player2</h4>
-            <p class="card-text">Player2 fill in your details</p>
-            <div class="form-group">
-              <label for="avatar2"></label>
-              <input type="text" class="form-control" id="avatar2">
-            </div>
-            <input type="button" class="btn btn-primary" value="Submit" id="avatar2btn">
-
-          </div>
-        </div>
-
-      </div>
-      <div>
-        <a href="game.html" class="btn">proceed</a>
-      </div>
-
-
-    </div>
-
-  </div>
 
   <script src="js/jquery-3.3.1.js" charset="utf-8"></script>
   <script src="js/scripts.js" charset="utf-8"></script>
