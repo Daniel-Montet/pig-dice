@@ -1,11 +1,21 @@
+//UI LOGIC
+var maxscore=100
+var scoreboard1= 0
+var currentscore1=0
+var turnscore1=0
+var scoreboard2= 0
+var currentscore2=0
+var turnscore2=0
 $(document).ready(function(){
   var name1=''
   var name2=''
   var hold1=''
   var hold2=''
+ // alert(hold1)
   $('#avatar1btn').click(function(){
     name1=$('#avatar1name').val();
     getname1(name1);
+
   })
 
   $('#avatar2btn').click(function(){
@@ -14,25 +24,32 @@ $(document).ready(function(){
   })
 
   $("#hold1").click(function(){
-    hold1=true
+    $('#avatar1roll').hide();
+    $('#avatar2roll').show();
     $("#turn").text("Its "+name2+ "'s turn")
+    hold1=true
+    rollPlayer1(name1,hold1)
+
   })
 
   $("#avatar1roll").click(function(){
   //  console.log(name1+" " + hold1)
 
-    rollPlayer1(name1,hold1,name2,hold2)
+    rollPlayer1(name1,hold1)
 
   })
   $("#avatar2roll").click(function(){
-    console.log(name2+" " + hold2)
-    rollPlayer2(name1,hold1,name2,hold2)
+    //console.log(name2+" " + hold2)
+    rollPlayer2(name2,hold2)
 
 
   })
   $("#hold2").click(function(){
+    $('#avatar2roll').hide();
+    $('#avatar1roll').show();
     $("#turn").text("Its "+name1+ "'s turn")
-    hold2=true
+     hold2=true
+     rollPlayer2(name2,hold2)
   })
   $("#next").click(function(){
     $("#page2").show()
@@ -54,6 +71,95 @@ function getname2(name2){///CAPTURE PLAYER 2 NAME
 }
 
 
+
+
+function rollPlayer1(name1,hold1){//CALCULATE ROLL FUNCTIONALITY FOR AVATARS
+    this.name=name1
+    this.hold=hold1
+    this.currentscore=0
+    this.turnscore=turnscore1
+    this.scoreboard=scoreboard1
+
+    turnscore1=Math.floor(Math.random()*6)+1;
+    $('#player1rollscore').text(turnscore1)
+    if(scoreboard1===maxscore){////display win
+        $('#player1scoreboard').text("You win, you hit " + this.scoreboard1)
+        return
+    }
+    if(currentscore1<maxscore && this.hold===true){
+      this.hold=false
+      $('#avatar2roll').show();
+        scoreboard1+=currentscore1
+  //      alert(scoreboard1)
+        currentscore1-=currentscore1
+        $('#player1currentscore').text("its players 2 turn and the current round score is "+currentscore1)
+       $('#player1scoreboard').text("player1 scoreboard score " + scoreboard1)
+
+
+
+    }
+    if(turnscore1!=1){
+        currentscore1+=turnscore1
+
+        $('#player1currentscore').text("Player1 current round score "+currentscore1)
+
+    }
+    if(turnscore1==1){
+
+      $("#turn").text("Its player2's turn")
+      $('#avatar1roll').hide();
+      $('#avatar2roll').show();
+        currentscore1-=currentscore1
+        $('#player1currentscore').text("Player1 hit a 1 and current round score is "+currentscore1)
+
+    }
+
+
+
+}
+
+
+function rollPlayer2(name2,hold2){//CALCULATE ROLL FUNCTIONALITY FOR AVATARS
+    this.name=name2
+    this.hold=hold2
+    this.currentscore=currentscore2
+    this.turnscore=turnscore2
+    this.scoreboard=scoreboard2
+
+    turnscore2=Math.floor(Math.random()*6)+1;
+    $('#player2rollscore').text("Player2 rollscore = " +turnscore2)
+    if(scoreboard2===maxscore){////display win
+        $('#player2scoreboard').text("You win, you hit " + this.scoreboard2)
+        return
+    }
+    if(currentscore2<maxscore && this.hold===true){
+      this.hold=false
+      $('#avatar1roll').show();
+        scoreboard2+=currentscore2
+        currentscore2-=currentscore2
+        $('#player2currentscore').text("its players 1 turn and the current round score is "+currentscore2)
+       $('#player2scoreboard').text("player2 scoreboard score " + this.scoreboard2)
+
+
+
+    }
+    if(turnscore2!=1){
+        currentscore2+=turnscore2
+        $('#player2currentscore').text("Player2 current round score "+currentscore2)
+
+    }
+    if(turnscore2==1){
+      $('#avatar2roll').hide();
+      $("#turn").text("Its player1's turn")
+      $('#avatar1roll').show();
+        currentscore2-=currentscore2
+        $('#player2currentscore').text("Player2 hit a 1 and current round score is "+currentscore2)
+
+    }
+
+}
+
+//BUSINESS LOGIC
 
 class Player{
     constructor(name){
@@ -89,82 +195,4 @@ class Avatar2 extends Player{//DESCRIBE PROPERTIES OF AVATAR 2
         return this.avatar2
     }
 
-}
-
-var maxscore=100
-var scoreboard1= 0
-var currentscore1=0
-var turnscore1=0
-var scoreboard2= 0
-var currentscore2=0
-var turnscore2=0
-
-function rollPlayer1(name1,hold1){//CALCULATE ROLL FUNCTIONALITY FOR AVATARS
-    this.name=name1
-    this.hold=false
-    this.currentscore=0
-    this.turnscore=turnscore1
-    this.scoreboard=scoreboard1
-
-    turnscore1=Math.floor(Math.random()*6)+1;
-    $('#player1rollscore').text("Player1 rollscore = " +turnscore1)
-    if(currentscore1<maxscore && hold1===true){
-        scoreboard1+=currentscore1
-        currentscore1-=currentscore1
-        $('#player1currentscore').text("its players 2 turn and the current round score is "+currentscore1)
-       $('#player1scoreborad').text("player1 scoreboard score " + this.scoreboard1)
-
-
-
-    }
-    if(turnscore1!=1){
-        currentscore1+=turnscore1
-        $('#player1currentscore').text("Player1 current round score "+currentscore1)
-
-    }
-    if(turnscore1==1){
-        currentscore1-=currentscore1
-        $('#player1currentscore').text("Player1 hit a 1 and current round score is "+currentscore1)
-
-    }
-    if(scoreboard1===maxscore){////display win
-        $('#player1scoreborad').text("You win, you hit " + this.scoreboard1)
-        return
-    }
-
-
-}
-
-
-function rollPlayer2(name2,hold2){//CALCULATE ROLL FUNCTIONALITY FOR AVATARS
-    this.name=name2
-    this.hold=false
-    this.currentscore=currentscore2
-    this.turnscore=turnscore2
-
-    turnscore2=Math.floor(Math.random()*6)+1;
-    console.log("Player2 turnscore = " +turnscore2)
-    if(currentscore2<maxscore && hold2===true){
-        scoreboard2+=currentscore2
-        currentscore2-=currentscore2
-        console.log("its players 1 turn and the currentscore is "+currentscore2)
-       console.log("player2 scoreboard score " + this.scoreboard2)
-
-
-
-    }
-    if(turnscore2!=1){
-        currentscore2+=turnscore2
-        console.log("Player2 current round score "+currentscore2)
-
-    }
-    if(turnscore2==1){
-        currentscore2-=currentscore2
-        console.log("Player2 hit a 1 and current round score is "+currentscore2)
-
-    }
-    if(scoreboard2===maxscore){////display win
-        console.log("you win")
-        return
-    }
 }
