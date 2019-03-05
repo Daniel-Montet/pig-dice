@@ -6,6 +6,7 @@
   <title>Pig-Dice</title>
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Srisakdi|ZCOOL+QingKe+HuangYou" rel="stylesheet"
 
 
 </head>
@@ -14,7 +15,7 @@
   <div class="container" id="page1">
     <div class="row">
       <div class="col-md-10">
-        <div class="card border-secondary">
+        <div class="card border-success">
           <h1>Welcome to the game of Pig</h1>
           <p>Pig is a simple dice game which in its basic form is playable with just a single die. You win by being the first player to score 100 or more points.</p>
           <p>To play you'll need 2 to 10 players, one 6-sided dice, and a pencil and some paper for keeping score.</p>
@@ -29,29 +30,30 @@
       </div>
       <div class="col-md-2">
 
-        <div class="card border-secondary" style="width:200px">
+        <div class="card border-success" style="width:200px">
           <p>Play game</p>
-          <div class="card-body border-secondary">
+          <div class="card-body border-success">
             <div class="form-group">
               <label for="avatar2"></label>
-              <input type="text" class="form-control border-secondary" id="avatar2name" placeholder="player-1..">
+              <input type="text" class="form-control border-success" id="avatar2name" placeholder="player-1..">
             </div>
             <div >
-              <input type="button" class="btn btn-outline-secondary btn-sm" value="submit" id="avatar2btn">
+              <input type="button" class="btn btn-outline-success btn-sm" value="submit" id="avatar2btn">
 
             </div>
             <div class="form-group">
               <label for="avatar1"></label>
-              <input type="text" class="form-control border-secondary" id="avatar1name" placeholder="player-2..">
+              <input type="text" class="form-control border-success" id="avatar1name" placeholder="player-2..">
             </div>
             <div >
-              <input type="button" class="btn btn-outline-secondary btn-sm" id="avatar1btn" value="submit">
+              <input type="button" class="btn btn-outline-success btn-sm" id="avatar1btn" value="submit">
 
             </div>
 
           </div>
           <div class="card-footer">
-            <a href="#page2" class="btn btn-outline-secondary btn-sm" id="next">proceed</a>
+
+       <a href="#page2" class="btn btn-outline-success btn-sm" id="next">proceed</a>
           </div>
 
 
@@ -64,27 +66,27 @@
   </div>
   <div class="container-fluid" id="page2">
     <div class="row">
-      <div class="col-md-2">
-        <div class="card border-secondary">
+      <div class="col-md-2" >
+        <div class="card border-success" id="player1">
           <img class="card-img-top" src="https://cdn2.iconfinder.com/data/icons/flatfaces-everyday-people-square/128/boy_young_male_face_avatar-512.png" alt="Card image">
 
           <div class="card-header" id="player1name"></div>
-          <div class="card-body border-secondary">
+          <div class="card-body border-success">
             <div class="form-group">
               <label for="avatar1"></label>
-              <input type="button" class="btn btn-outline-secondary btn-sm" id="avatar1roll" value="roll">
+              <input type="button" class="btn btn-outline-success btn-sm" id="avatar1roll" value="roll">
 
             </div>
           </div>
           <div class="card-footer">
-            <input type="button" class="btn btn-outline-secondary btn-sm" id="hold1" value="hold">
+            <input type="button" class="btn btn-outline-success btn-sm" id="hold1" value="hold">
           </div>
         </div>
 
       </div>
       <div class="col-md-8" id="display">
 
-          <div class="card-body border-secondary" id="turn">
+          <div class="card-body border-success" id="turn">
 
           </div>
 
@@ -92,48 +94,51 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-md-4">
-              <div class="card border-secondary">
+              <div class="card border-success">
                 <h6>roll-score</h6>
-                <div class="card-body border-secondary"  id="player1rollscore">
+                <div class="card-body border-success"  id="player1rollscore">
 
                 </div>
 
 
               </div>
-              <div class="card border-secondary">
+              <div class="card border-success">
                 <h6>round-score</h6>
-                <div class="card-body border-secondary"  id="player1currentscore">
+                <div class="card-body border-success"  id="player1currentscore">
 
                 </div>
 
 
               </div>
-              <div class="card border-secondary">
+              <div class="card border-success">
                 <h6>total-score</h6>
-                <div class="card-body border-secondary"  id="player1scoreboard">
+                <div class="card-body border-success"  id="player1scoreboard">
 
                 </div>
 
               </div>
             </div>
             <div class="col-md-4">
-              <div class="card border-secondary">
+
+            </div>
+            <div class="col-md-4">
+              <div class="card border-success">
                 <h6>roll-score</h6>
-                <div class="card-body border-secondary"  id="player2rollscore">
+                <div class="card-body border-success"  id="player2rollscore">
 
                 </div>
 
               </div>
-              <div class="card border-secondary">
+              <div class="card border-success">
                 <h6>round-score</h6>
-                <div class="card-body border-secondary"  id="player2currentscore">
+                <div class="card-body border-success"  id="player2currentscore">
 
                 </div>
 
               </div>
-              <div class="card border-secondary">
+              <div class="card border-success">
                 <h6>total-score</h6>
-                <div class="card-body border-secondary"  id="player2scoreborad">
+                <div class="card-body border-success"  id="player2scoreboard">
 
                 </div>
 
@@ -148,20 +153,20 @@
 
       </div>
 
-      <div class="col-md-2">
-        <div class="card border-secondary">
+      <div class="col-md-2" >
+        <div class="card border-success" id="player2">
           <img class="card-img-top" src="https://cdn2.iconfinder.com/data/icons/flatfaces-everyday-people-square/128/boy_young_male_face_avatar-512.png" alt="Card image">
 
           <div class="card-header" id="player2name"></div>
-          <div class="card-body border-secondary">
+          <div class="card-body border-success">
             <div class="form-group">
               <label for="avatar1"></label>
-              <input type="button" class="btn btn-outline-secondary btn-sm" id="avatar2roll" value="roll">
+              <input type="button" class="btn btn-outline-success btn-sm" id="avatar2roll" value="roll">
 
             </div>
           </div>
           <div class="card-footer">
-            <input type="button" class="btn btn-outline-secondary btn-sm" id="hold2" value="hold">
+            <input type="button" class="btn btn-outline-success btn-sm" id="hold2" value="hold">
           </div>
 
         </div>
