@@ -1,4 +1,28 @@
-#page2{
-    display: none;
-
+#page1{
+    margin-top: 2%;
 }
+#page2{
+    background-image: url(https://st.depositphotos.com/1010629/2287/i/950/depositphotos_22877136-stock-photo-green-velvet-pool-table-texture.jpg);
+
+    display: none;
+    height: 720px;    
+}
+
+body{
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    text-align: justify;
+    font-size: 13px;
+    background-image: url(https://st.depositphotos.com/1010629/2287/i/950/depositphotos_22877136-stock-photo-green-velvet-pool-table-texture.jpg);
+}
+#turn{
+    font-size: 40px;
+    text-align: center;
+}
+
+#player1{
+    margin-top: 20%;
+}
+#player2{
+    margin-top: 20%;
+}
+
